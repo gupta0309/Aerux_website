@@ -1,0 +1,19 @@
+<svg
+  viewBox="0 0 1000 1000"
+  preserveAspectRatio="none"
+  className="hero-svg"
+  style={{ width: '98vw', height: '100vh' }}
+>
+  <polygon
+    points="430,0 480,60 610,60 670,0 1000,0 1000,1000 0,1000 0,700 0,350 0,0"
+    fill="transparent"
+    stroke="#14accb"
+    strokeWidth="4"
+    filter="url(#glow)"
+  />
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#14accb" />
+    </filter>
+  </defs>
+</svg>

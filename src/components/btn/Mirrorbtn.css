@@ -1,0 +1,57 @@
+/* U L T A   C L I P – B T N */
+.mirror-btn-ulta {
+  position: relative;
+  padding: 25px;
+  padding-top: 7px;
+  padding-bottom: 35px;
+  font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center; 
+  /* background: transparent; */
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  margin-top: 16px;
+  
+
+  /* OPPOSITE(CLIPPED FROM BOTTOM) */
+  clip-path: polygon(
+    0 0,
+    91% 0,
+    100% 44%,
+    100% 100%,
+    71% 100%,
+    70% 85%,
+    40% 86%,
+    34% 100%,
+    7% 100%,
+    0 56%
+  );
+  overflow: visible;
+}
+
+/* BORDER */
+.mirror-btn-ulta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #14accb;
+  z-index: -2;
+  clip-path: inherit;
+}
+
+/* INNER FILL */
+.mirror-btn-ulta::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  /* background: linear-gradient(90deg, #000 0%, #373737 100%); */
+   background: linear-gradient(90deg, #000 0%, #373737 100%);
+  z-index: -1;
+  clip-path: inherit;
+}
+.mirror-btn-ulta:hover::after {
+  background: linear-gradient(90deg, #373737 0%, #000 100%);
+}

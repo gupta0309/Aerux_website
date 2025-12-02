@@ -1,0 +1,45 @@
+.heading-wrapper {
+  width: 95vw;
+  min-height: 60vh;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* OUTER BLUE BORDER SHAPE */
+.heading-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00c6ff;   /* border color */
+  z-index: -2;
+
+  clip-path: polygon(
+    50% 0, 100% 0, 100% 13%, 100% 87%,
+    88% 100%, 50% 100%, 16% 100%,
+    0 100%, 0 13%, 14% 0
+  );
+}
+
+/* INNER DARK SHAPE (BACKGROUD OF PAGE) */
+.heading-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 4px; /* border thickness */
+  background: #050608;  /* page background inside */
+  z-index: -1;
+
+  clip-path: polygon(
+    50% 0, 100% 0, 100% 13%, 100% 87%,
+    88% 100%, 50% 100%, 16% 100%,
+    0 100%, 0 13%, 14% 0
+  );
+}
+
+/* YOUR PAGE CONTENT */
+.heading-content {
+  position: relative;
+  padding: 40px;
+  z-index: 10;
+  color: white;
+}

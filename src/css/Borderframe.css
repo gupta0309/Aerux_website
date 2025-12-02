@@ -1,0 +1,40 @@
+.border-frame-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.border-svg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* OUTER BORDER STYLE */
+.outer-border {
+  fill: none;
+  stroke: #00d2ff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* INNER GLOW STYLE */
+.inner-border {
+  fill: none;
+  stroke: #66faff;
+  stroke-width: 1.5;
+  opacity: 0.75;
+  stroke-linecap: round;
+}
+
+/* LOGO SLOT (CENTER AREA) */
+.logo-slot {
+  position: absolute;
+  top: 32px;    /* adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

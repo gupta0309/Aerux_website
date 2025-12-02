@@ -1,0 +1,225 @@
+/* .partners-section {
+  background: #000;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.partners-heading {
+  font-family: 'Borned', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color:#FFFFFF;
+  margin-bottom: 50px;
+}
+
+.partners-heading span {
+  background: linear-gradient(124.93deg, #05B4C8 12.67%, #00376B 87.18%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 90%;
+  margin: auto;
+}
+
+
+.partner-box {
+  position: relative;
+  padding: 10px 40px;
+  background: transparent; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  z-index: 1;
+width: ;
+height: 75px;
+  clip-path: polygon(0 0, 96% 0, 100% 27%, 100% 100%, 5% 100%, 0 78%);
+  -webkit-clip-path: polygon(0 0, 96% 0, 100% 27%, 100% 100%, 5% 100%, 0 78%);
+}
+
+
+.partner-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(124.93deg, #05B4C8 12.67%, #00376B 87.18%);
+  z-index: -2;
+  clip-path: inherit;
+  -webkit-clip-path: inherit;
+}
+
+
+.partner-box::after {
+  content: "";
+  position: absolute;
+  inset: 2px; 
+  background: linear-gradient(90deg, #000000 0%, #373737 100%);
+  z-index: -1;
+  clip-path: inherit;
+  -webkit-clip-path: inherit;
+  pointer-events: none;
+}
+
+.partner-box:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.15);
+}
+
+.partner-img {
+  width: 85%;
+ 
+  object-fit: contain;
+} */
+
+
+
+
+
+
+
+.partners-section {
+  background: #000;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Heading */
+.partners-heading {
+  font-family: 'Borned', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color:#FFFFFF;
+  margin-bottom: 50px;
+}
+
+.partners-heading span {
+  background: linear-gradient(124.93deg, #05B4C8 12.67%, #00376B 87.18%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Partner Box */
+.partner-box {
+  position: relative;
+  padding: 10px 40px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  transition: 0.3s ease;
+  clip-path: polygon(0 0, 96% 0, 100% 27%, 100% 100%, 5% 100%, 0 78%);
+  -webkit-clip-path: polygon(0 0, 96% 0, 100% 27%, 100% 100%, 5% 100%, 0 78%);
+}
+
+.partner-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(124.93deg, #05B4C8 12.67%, #00376B 87.18%);
+  z-index: -2;
+  clip-path: inherit;
+}
+
+.partner-box::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(90deg, #000000 0%, #373737 100%);
+  z-index: -1;
+  clip-path: inherit;
+  pointer-events: none;
+}
+
+.partner-img {
+  width: 85%;
+  object-fit: contain;
+}
+
+.partner-box:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.15);
+}
+
+
+/* ------------------------------ */
+/* 📱 RESPONSIVE */
+/* ------------------------------ */
+
+/* For Tablets */
+@media (max-width: 992px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  .partner-box {
+    height: 70px;
+    padding: 10px 30px;
+  }
+
+  .partner-img {
+    width: 75%;
+  }
+}
+
+/* For Mobile */
+@media (max-width: 600px) {
+  .partners-heading {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 35px;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .partner-box {
+    height: 65px;
+    padding: 10px 25px;
+  }
+
+  .partner-img {
+    width: 70%;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 400px) {
+  .partner-box {
+    height: 60px;
+    padding: 8px 20px;
+  }
+
+  .partner-img {
+    width: 65%;
+  }
+}

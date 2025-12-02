@@ -1,0 +1,249 @@
+/* ===================== GLOBAL ====================== */
+
+.body { }
+
+.main-heading h1 {
+    font-family: 'Borned', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 2rem;
+    color:#fff;
+    animation: fadeDown 1.2s ease forwards;
+}
+
+.main-heading h1 span{
+    color:#003768;
+}
+
+/* ===================== ANIMATIONS ====================== */
+
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dividerGlow {
+  0% { box-shadow: 0 0 0px #14accb; }
+  50% { box-shadow: 0 0 10px #14accb; }
+  100% { box-shadow: 0 0 0px #14accb; }
+}
+
+@keyframes cardPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+
+/* ===================== IMAGE CONTAINER ====================== */
+
+.image-container{
+    padding: 60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    animation: fadeUp 1.3s ease forwards;
+}
+
+
+/* ===================== TOKEN PAGE ====================== */
+
+.token-page {
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Science Gothic', sans-serif;
+  padding: 60px;
+}
+
+.token-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0;
+  width: 100%;
+  margin: auto;
+  animation: fadeUp 1.4s ease forwards;
+}
+
+.token-row.first {
+  display: grid;  
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+  animation: fadeUp 1.6s ease forwards;
+}
+
+.token-row.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  animation: fadeUp 1.8s ease forwards;
+}
+
+
+/* ===================== TOKEN ITEMS ====================== */
+
+.token-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+
+.token-label,
+.token-value {
+  min-width: 150px;        
+  width: 100%;             
+  max-width: 150px;        
+  border: 1px solid #272727;
+  backdrop-filter: blur(82px);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  padding: 14px 0;
+  border-radius: 5px;
+  animation: cardPulse 4s infinite ease-in-out;
+  cursor: pointer;
+}
+
+.token-value {
+  background: #00D4FF59;
+}
+
+.token-label{
+  border: 2px solid #14accb;
+  box-shadow: 0px 0px 3px #FFFFFF40 inset !important;
+}
+
+
+/* ===================== DIVIDER ====================== */
+
+.divider {
+  height: 1px;
+  width: 0%;
+  max-width: 80px;
+  min-width: 80px;
+  background: #05b4c8;
+  animation: dividerGlow 3s infinite ease-in-out;
+}
+
+
+
+
+
+.token-label,
+.token-value {
+  min-width: 150px;
+  width: 100%;
+  max-width: 150px;
+  border: 1px solid #272727;
+  backdrop-filter: blur(82px);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  padding: 14px 0;
+  border-radius: 5px;
+  animation: cardPulse 4s infinite ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Label style */
+.token-label {
+  border: 2px solid #14accb;
+  box-shadow: 0px 0px 3px #FFFFFF40 inset !important;
+}
+
+/* Value style */
+.token-value {
+  background: #00D4FF59;
+}
+
+
+/* ===================== HOVER EFFECT ====================== */
+.token-label:hover,
+.token-value:hover {
+  transform: scale(1.05);
+  border-color: #14accb;
+  box-shadow: 0 0 10px #14accb, 0 0 20px #14accb inset;
+  background: #00d4ff80;
+}
+
+
+
+
+
+/* ===================== MOBILE RESPONSIVENESS ====================== */
+
+@media (max-width: 900px) {
+  .token-page {
+    padding: 30px;
+  }
+
+  .token-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .main-heading h1 {
+    font-size: 28px;
+  }
+
+  .image-container {
+    padding: 20px;
+
+  }
+
+   .image-container .img {
+    width: 100%;
+    height: auto;
+   }
+  .token-row.first {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .token-row.second {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .token-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .token-label,
+  .token-value {
+    max-width: 100%;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .token-label,
+  .token-value {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .main-heading h1 {
+    font-size: 24px;
+  }
+}

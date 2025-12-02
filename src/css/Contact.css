@@ -1,0 +1,430 @@
+/* 
+.contract-wrapper {
+  background: #000;
+  padding: 40px 0;
+  border: 2px solid #00aaff;
+}
+
+
+.contract-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background: #0b0b0b;
+  border: 2px solid #0fa0ff;
+  border-radius: 10px;
+}
+
+
+.left-logo .logo-img {
+  width: 260px;
+  height: auto;
+}
+
+
+.right-content {
+  flex: 1;
+  text-align: center;
+  color: white;
+}
+
+.contract-heading {
+  font-size: 34px;
+  letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+}
+
+.contract-heading span {
+  color: #0fa0ff;
+}
+
+
+.address-box {
+  margin: 25px auto;
+  padding: 14px 20px;
+  max-width: 650px;
+  border: 2px solid #0fa0ff;
+  border-radius: 6px;
+  color: #dcdcdc;
+  background: #000;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+
+.copy-btn {
+  margin-top: 10px;
+  padding: 10px 35px;
+  background: #1a1a1a;
+  color: #0fa0ff;
+  border: 2px solid #0fa0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  transition: 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #0fa0ff;
+  color: #000;
+} */
+
+
+
+
+
+
+
+.contract-section {
+  width: 100%;
+  background: #000;
+  padding: 0px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  /* clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0% 20%); */
+  
+}
+
+/* OUTER MAIN FRAME */
+.contract-frame {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 260px;
+  background: #0b0b0b;
+  border: 2px solid #14accb;
+  border-radius: 15px;
+  padding: 0px 40px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 25px #009ad4;
+  
+}
+
+/* FUTURISTIC BORDER CUTS */
+.contract-frame::before,
+.contract-frame::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 40px;
+  border: 2px solid #14accb;
+  border-bottom: none;
+  border-left: none;
+  top: 0;
+  right: 70px;
+  transform: skewX(25deg);
+}
+
+.contract-frame::after {
+  bottom: 0;
+  top: auto;
+  border-top: none;
+  border-right: none;
+  border-left: 2px solid #14accb;
+  transform: skewX(-25deg);
+}
+
+/* LEFT LOGO BUBBLE */
+.contract-left {
+  z-index: 10;
+}
+
+/* .contract-logo {
+  width: 300px;
+  height: 300px;
+  filter: drop-shadow(0 0 18px #0acbff);
+  z-index: 999;
+  position:relative;
+  top:-140px;
+  
+} */
+
+
+/* .contract-logo{ */
+
+    /* left: 20%; */
+    /* transform: translateX(-20%); */
+ /* top: 40%;
+ position: relative;
+ z-index: 999;
+ object-fit: cover
+} */
+
+
+
+.contract-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.contract-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* image verticallly center hogi */
+}
+
+.contract-logo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* Exact screenshot effect */
+  position: relative;
+  left: -50px;        /* corner border par sahi overlap */
+  top: -20px;         /* thoda upar jaake border ko cover kare */
+
+  z-index: 5;
+
+  /* NEON glow */
+  box-shadow: 0 0 40px rgba(20, 172, 203, 0.8);
+}
+
+
+.contract-wrapper{
+  overflow: visible !important;
+}
+
+
+
+
+/* RIGHT CONTENT AREA */
+.contract-right {
+  flex: 1;
+  text-align: center;
+  margin-left: 200px;
+  z-index: 5;
+  padding-top: 0;
+}
+
+.contract-title {
+   
+  /* -webkit-text-stroke: 2px #14accb; border color */
+
+  color: #fff;
+  font-size: 36px;
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  padding: 0;
+}
+
+.contract-title span {
+  color: #14accb;
+}
+
+/* ADDRESS BOX EXACT STYLE */
+/* .address-box {
+ font-family: "Orbitron", sans-serif;
+ font-size: 16px;
+  border: 2px solid #14accb;
+  width: 45%;
+  margin: auto;
+  margin-left: 350px;
+  padding: 12px 18px;
+  font-family: monospace;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 6px;
+  box-shadow: inset 0 0 12px #003344;
+} */
+
+
+
+
+
+:root {
+    --neon-blue: #14accb;
+    --dark-fill: #000;
+    --border-thickness: 2px;
+    --inner-glow-color: #003344;
+    
+    /* Define the custom shape polygon */
+    --clip-path-shape: polygon(
+        10% 0%, 
+        100% 0%, 
+        100% 80%, 
+        90% 100%, 
+        0% 100%, 
+        0% 20%
+    );
+}
+
+.address-box {
+    position: relative;
+    /* 1. Remove standard border/radius */
+    border: none; 
+    border-radius: 0;
+    
+    /* 2. Set main container background to transparent */
+    background: transparent; 
+    
+    width: 45%;
+    margin: auto;
+    margin-left: 350px;
+    padding: 12px 18px;
+    
+    /* 3. Apply clip-path to the main box area */
+    clip-path: var(--clip-path-shape); 
+    z-index: 1; /* Ensure text is on top */
+    
+    /* Text styles */
+    font-family: monospace; 
+    font-size: 16px;
+    color: #d9d9d9;
+    
+    /* The box-shadow property can stay, but it will only affect the area inside the clip-path */
+    box-shadow: inset 0 0 12px var(--inner-glow-color); 
+}
+
+/* --- 4. The Border (::before) --- */
+.address-box::before {
+    content: '';
+    position: absolute;
+    z-index: -2; /* Place behind both the text and the fill */
+    
+    /* Apply the same custom shape */
+    clip-path: var(--clip-path-shape);
+    
+    /* Set the border color */
+    background: var(--neon-blue);
+    
+    /* Offset the pseudo-element to create the visible border */
+    inset: calc(-1 * var(--border-thickness)); 
+    
+    /* Optional: Add an outer glow effect */
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* --- 5. The Inner Fill/Background (::after) --- */
+.address-box::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* Place behind the text but on top of the border (::before) */
+    
+    /* Apply the same custom shape */
+    clip-path: var(--clip-path-shape);
+    
+    /* This creates the dark inner background fill */
+    background: var(--dark-fill); 
+    
+    /* Offset by the border thickness to sit exactly inside the ::before border */
+    inset: var(--border-thickness);
+}
+
+/* IMPORTANT: If you want to use the 'Orbitron' font for the text inside,
+   you must explicitly specify it, as you had two font-family declarations 
+   in your original code. The 'monospace' will override 'Orbitron' if 
+   listed later. */
+
+/* Example to ensure Orbitron is used for the text */
+.address-box {
+    /* ... other styles ... */
+    font-family: "Orbitron", sans-serif; /* Use Orbitron for the main text */
+}
+
+
+
+
+
+/* Define the variables (already present in your code) */
+:root {
+    --neon-blue: #14accb;
+    --dark-fill: #101010;
+    --border-thickness: 2px; /* Define border thickness */
+}
+
+.copy-btn {
+    position: relative;
+    margin-top: 18px;
+    background: transparent; /* Set main background to transparent or slightly offset color */
+    
+    /* 1. REMOVE the standard 'border' property */
+    border: none; 
+    
+    padding: 10px 32px;
+    margin-left: 100px;
+    color: var(--neon-blue);
+    /* 2. REMOVE border-radius, as clip-path ignores it */
+    border-radius: 0; 
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    transition: 0.2s;
+    z-index: 1; /* Ensure text is on top */
+
+    --clip-path-shape: polygon(
+        10% 0%, 
+        100% 0%, 
+        100% 80%, 
+        90% 100%, 
+        0% 100%, 
+        0% 20%
+    );
+    /* 3. Apply clip-path ONLY to define the button's visible content area */
+    clip-path: var(--clip-path-shape); 
+}
+
+/* --- 4. The Border (::before) --- */
+.copy-btn::before {
+    content: '';
+    position: absolute;
+    /* Position the pseudo-element to cover the entire button */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Place the border behind the button text */
+
+    /* Apply the same custom shape */
+    clip-path: var(--clip-path-shape);
+
+    /* The border color (this layer IS the border) */
+    background: var(--neon-blue);
+    
+    /* Offset the pseudo-element to create the visible border */
+    /* This makes the pseudo-element slightly bigger than the main button */
+    inset: calc(-1 * var(--border-thickness)); /* Inset by the negative of the thickness */
+    
+    transition: 0.2s;
+}
+
+/* --- 5. The Inner Fill/Background (::after) --- */
+.copy-btn::after {
+    content: '';
+    position: absolute;
+    /* Position the fill slightly inside the border/::before layer */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+    
+    /* Apply the same custom shape */
+    clip-path: var(--clip-path-shape);
+    
+    /* This creates the dark inner background fill */
+    background: var(--dark-fill); 
+    
+    /* Offset by the border thickness to sit inside the ::before border */
+    inset: var(--border-thickness);
+}
+
+/* --- 6. Hover Effect --- */
+.copy-btn:hover {
+    /* On hover, change the button's text color */
+    color: var(--dark-fill); 
+}
+
+.copy-btn:hover::after {
+    /* On hover, change the inner dark fill background to the neon color */
+    background: var(--neon-blue);
+}

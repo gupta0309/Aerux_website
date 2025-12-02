@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --neon-blue: #14accb;
+    --dark-bg: #000;
+    --dark-fill: #101010;
+    --futuristic-font: 'Orbitron', sans-serif;
+    --borned-font: 'Borned', sans-serif;
+    --body-font: 'Science Gothic', sans-serif;
+    --border-thickness: 2px;
+     --button-gradient-start: #05b4c8;
+    --button-gradient-end: #003768;
+    --cutout-size: 15px; 
+    --border-color: white;
+  
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    overflow-x: hidden;
+}
+
+/* --- 0. HERO CONTAINER (Overall Layout and Background) --- */
+.hero-container {
+    height: 100vh;
+    width: 98vw;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    border: 2px solid var(--neon-blue);
+    border-radius: 30px;
+    /* clip-path: polygon(43% 0, 48% 6%, 61% 6%, 67% 0, 100% 0, 100% 100%, 0 100%, 0% 70%, 0% 35%, 0 0); */
+}
+
+
+
+
+
+
+
+/* 
+ .hero-container {
+    position: relative;
+    width: 98vw;
+    height: 100vh;
+    clip-path: polygon(
+        43% 0,
+        48% 6%,
+        61% 6%,
+        67% 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0% 70%,
+        0% 35%,
+        0 0
+    );
+    border-radius: 30px;
+    overflow: hidden; */
+    /* background: transparent padding-box, inner fill linear-gradient(90deg, #00ffff, #00ffff) border-box; border */
+/* }  */
+/* Neon glow effect */
+/* .hero-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: inherit;
+    background: transparent;
+    filter: blur(8px);
+    z-index: -1;
+} */
+
+
+
+
+
+
+
+
+
+
+/* .hero-container {
+  position: relative;
+  width: 98vw;
+  height: 100vh;
+
+  --hero-clip-path: polygon(
+    43% 0,
+    48% 6%,
+    61% 6%,
+    67% 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0% 70%,
+    0% 35%,
+    0 0
+  );
+
+  clip-path: var(--hero-clip-path);
+  background: transparent;
+  border-radius: 30px;
+  overflow: visible;
+} */
+
+/* 🔥 REAL BORDER FOR CLIP-PATH SHAPE */
+/* .hero-container::after {
+  content: "";
+  position: absolute;
+  inset: -3px;              Thickness control */
+  /* clip-path: var(--hero-clip-path);
+  border-radius: 30px;
+  background: none;
+  pointer-events: none; */
+
+  /* Border Color + Glow */
+  /* border: 3px solid #14accb;     REAL visible border */
+  /* box-shadow:
+    0 0 10px #14accb,
+    0 0 20px #14accb;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+    /* opacity: 0.2; */
+    margin-right: 0;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2), rgba(0,0,0,0.8)); */
+}
+
+/* --- 1. HEADER / NAVBAR (Crucial Centering Update) --- */
+.navbar {
+    position: relative;
+    z-index: 20;
+    display: grid; /* Use grid for precise column placement */
+    grid-template-columns: 1fr auto 1fr; /* Left (1fr), Center (auto), Right (1fr) */
+    align-items: center;
+    padding: 20px 40px 10px 40px; /* Adjusted padding top/bottom */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Align left links to the start */
+.nav-left-links {
+    justify-content: flex-start;
+}
+
+/* Align right links/button to the end */
+.nav-right-links {
+    justify-content: flex-end;
+}
+
+/* Logo Styling */
+.navbar-center-logo {
+    display: flex;
+    justify-content: center; /* Center logo in its column */
+    padding-top: 5px; /* Adjust vertical position */
+    width: 20px;
+}
+
+.navbar-logo {
+    height: 40px; /* Increased size to match the image better */
+}
+
+/* Navigation Item Styling */
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 5px;
+    list-style: none;
+}
+
+.nav-item:hover{
+    color: var(--neon-blue);
+    border-bottom: #05b4c8;
+
+}
+
+.nav-item.active {
+    color: var(--neon-blue);
+
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--neon-blue);
+}
+
+/* Navbar Buy Button (simple style) */
+.nav-buy-button {
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-left: 20px; /* Space between last link and button */
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    background: transparent;
+    border-radius: 5px;
+    clip-path: none;
+    font-family: var(--futuristic-font);
+}
+.nav-buy-button:hover {
+    background: var(--neon-blue);
+    color: var(--dark-bg);
+}
+
+/* --- 2. MAIN CONTENT AREA (Robot + Text) --- */
+.main-content-area {
+    position: relative;
+    z-index: 10;
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    padding-bottom: 100px;
+}
+
+.robot-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; 
+    width: 45%; 
+    max-width: 460px; /* Increased max size */
+    pointer-events: none; /* Ignore clicks on the empty space */
+}
+
+.robot-image {
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+    transform: translateX(-50px); 
+}
+
+.hero-text-content {
+    flex-grow: 1; 
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: 150px;
+    text-align: left;
+    padding-top: 50px;
+}
+
+/* Text Styling */
+.tagline-row {
+    font-weight: 700;
+      font-family: Borned ,sans-serif;
+    font-size: 45px;
+    letter-spacing: 0%;
+    margin-bottom: 3px;
+    color: #fff;
+}
+
+.main-title {
+     font-family: Borned ,sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: 0%;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff; 
+    text-stroke: 1px #fff;
+}
+
+.main-title .highlight {
+    color: var(--neon-blue);
+    -webkit-text-stroke: 1px var(--neon-blue);
+    text-stroke: 1px var(--neon-blue);
+}
+
+.description-text {
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 550px;
+    margin-bottom: 35px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+/* --- 3. CTA BUTTONS (Main Content) --- */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+/* --- 4. SIDE TEXT AERUX --- */
+.side-text {
+    position: absolute;
+    right: 40px; /* Position moved slightly left to accommodate social icons */
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: 100% 50%;
+    font-family: "Borned",sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1); */
+    text-stroke: 1px rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0.8;
+    margin-top: 120px;
+   
+}
+
+
+/* Define Variables for easy modification */
+/* :root {
+    --button-gradient-start: #05b4c8;
+    --button-gradient-end: #003768;
+    --cutout-size: 15px; 
+    --border-color: white;
+    --border-thickness: 2px;
+} */
+
+/* 1. Main Container and Content Layer (.social-icons_) */
+.social-icons_ {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 20;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 15px; 
+    
+    padding: 10px 20px;
+    /* padding-left: 10px; */
+    background: transparent; 
+    border-radius: 0; 
+    
+    /* 🎯 UPDATED Custom Clip-Path for Upper-Left and Lower-Right Cuts */
+    --social-clip-path: polygon(
+        var(--cutout-size) 0%,           /* Top left angled cut start */
+        100% 0%, 
+        100% calc(100% - var(--cutout-size)), /* Bottom right angled cut end */
+        calc(100% - var(--cutout-size)) 100%, /* Bottom right angled cut start */
+        0% 100%, 
+        0% var(--cutout-size)            /* Top left angled cut end */
+    );
+    clip-path: var(--social-clip-path);
+    
+    color: var(--border-color); 
+}
+
+/* 2. The Inner Gradient Fill Layer (::before) */
+.social-icons_::before {
+   content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+ 
+    background: linear-gradient(var(--button-gradient-start), var(--button-gradient-end));
+    inset: var(--border-thickness); 
+    
+    --inner-clip-path: polygon(
+        calc(var(--cutout-size) - var(--border-thickness)) 0%,
+        100% 0%, 
+        100% calc(100% - var(--cutout-size) + var(--border-thickness)),
+        calc(100% - var(--cutout-size) + var(--border-thickness)) 100%,
+        0% 100%, 
+        0% calc(var(--cutout-size) - var(--border-thickness))
+    );
+    clip-path: var(--inner-clip-path);
+}
+
+
+.social-icons_::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2; 
+    
+    background: var(--border-color);
+    clip-path: var(--social-clip-path);
+}
+
+
+
+
+
+
+.social-icons_ a {
+    /* Style the container around the icon */
+    /* border: 1px solid var(--neon-blue); Subtle border around each icon */
+    padding: 2px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.social-icons_ img {
+    width: 30x;
+    height: 30px;
+    filter: brightness(0) invert(1); /* Make them white */
+    opacity: 0.8;
+    transition: filter 0.2s ease;
+}
+
+.social-icons_ a:hover {
+    border-color: #fff;
+    filter:brightness(0) invert(4);
+}
+
+.social-icons_ a:hover img {
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+/* ===================== RESPONSIVE HERO & NAVBAR ===================== */
+
+/* ----- Tablets / Medium Screens ----- */
+@media (max-width: 1024px) {
+    .hero-container {
+        width: 100vw;
+        border-radius: 20px;
+    }
+
+    .navbar {
+        padding: 15px 30px 10px 30px;
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    .nav-group {
+        gap: 20px;
+    }
+
+    .navbar-logo {
+        height: 35px;
+    }
+
+    .main-content-area {
+        padding: 0 20px;
+        padding-bottom: 80px;
+    }
+
+    .robot-wrapper {
+        width: 40%;
+        max-width: 380px;
+        transform: translateX(-30px);
+    }
+
+    .hero-text-content {
+        max-width: 500px;
+        margin-right: 100px;
+    }
+
+    .tagline-row,
+    .main-title {
+        font-size: 38px;
+    }
+
+    .description-text {
+        font-size: 16px;
+    }
+
+    .side-text {
+        font-size: 40px;
+        margin-top: 100px;
+    }
+
+    .social-icons_ {
+        bottom: 30px;
+        right: 30px;
+        gap: 12px;
+        padding: 8px 16px;
+    }
+
+    .social-icons_ img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ----- Mobile / Small Screens ----- */
+@media (max-width: 768px) {
+    .hero-container {
+        width: 100vw;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px 10px 20px;
+        gap: 10px;
+    }
+
+    .nav-group {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-center-logo {
+        justify-content: flex-start;
+        padding-top: 0;
+    }
+
+    .navbar-logo {
+        height: 30px;
+    }
+
+    .main-content-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 15px;
+        padding-bottom: 50px;
+    }
+
+    .robot-wrapper {
+        position: relative;
+        width: 70%;
+        max-width: 300px;
+        transform: translateX(0);
+        bottom: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-text-content {
+        max-width: 100%;
+        margin: 0;
+        padding-top: 20px;
+    }
+
+    .tagline-row,
+    .main-title {
+        font-size: 28px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        max-width: 90%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .side-text {
+        display: none; /* Hide rotated side text on mobile */
+    }
+
+    .social-icons_ {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+        padding: 6px 12px;
+    }
+
+    .social-icons_ img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* ----- Extra Small Devices / Portrait Phones ----- */
+@media (max-width: 480px) {
+    .nav-item {
+        font-size: 12px;
+    }
+
+    .nav-buy-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .tagline-row,
+    .main-title {
+        font-size: 22px;
+    }
+
+    .description-text {
+        font-size: 12px;
+    }
+
+    .cta-buttons {
+        gap: 8px;
+    }
+
+    .social-icons_ {
+        margin-top: 10px;
+    }
+    .social-icons_ img {
+        width: 20px;
+        height: 20px;
+        
+    }
+
+    .robot-wrapper {
+        width: 0%;
+        max-width: px;
+    }
+
+    .main-content-area {
+        padding: 15px;
+        padding-bottom: 40px;
+    }
+}

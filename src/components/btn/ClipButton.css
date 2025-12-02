@@ -1,0 +1,47 @@
+.clip-btn {
+  position: relative;
+  padding: 30px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  /* width: 150px; */
+
+  background:transparent; /* inner background */
+  color: #fff;
+  cursor: pointer;
+  border: none; 
+clip-path: polygon(7% 0, 34% 0, 40% 14%, 70% 15%, 71% 0, 100% 0, 100% 56%, 91% 100%, 0 100%, 0 46%);
+  overflow: visible;
+  margin-top: 3%;
+  /* margin-left: 5%; */
+  margin-bottom: 4%;
+}
+
+.clip-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* button size ke barabar */
+  background: linear-gradient(124.93deg, white 12.67%, white 87.18%); /* border gradient */
+  z-index: -2;
+  clip-path: inherit; /* same clip-path */
+  -webkit-clip-path: inherit;
+}
+
+.clip-btn::after {
+  content: "";
+  position: absolute;
+  inset: 1px; /* border thickness */
+  background: linear-gradient(90deg, #000 0%, #373737 100%); /* inner fill */
+  z-index: -1;
+  clip-path: inherit;
+  -webkit-clip-path: inherit;
+  pointer-events: none;
+}
+
+.clip-btn:hover::after {
+  background: linear-gradient(90deg, #373737 0%, #000 100%); /* hover pe swap */
+}

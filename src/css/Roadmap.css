@@ -1,0 +1,447 @@
+/* .main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  gap: 40px;
+} */
+
+/* LEFT SECTION */
+/* .left-wrapper {
+  width: 400px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-box {
+  width: 400px;
+  padding: 25px;
+  font-size: 20px;
+  border-radius: 10px;
+  background: #0f0f0f;
+  margin: 12px 0;
+  text-align: center;
+  border: 2px solid #0ed0ff;
+  transition: all 0.4s ease;
+} */
+
+/* MAIN VISIBLE CARD */
+/* .active-card {
+  background: #0e0e0e;
+  color: #ffffff;
+  scale: 1.05;
+  opacity: 1;
+  filter: blur(0);
+  border-color: white;
+} */
+
+/* OTHER CARDS DULL */
+/* .dull-card {
+  opacity: 0.3;
+  filter: blur(2px);
+  color: #ffffff;
+} */
+
+/* RIGHT SECTION */
+/* .right-wrapper {
+  width: 450px;
+}
+
+.right-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+} */
+
+/* RESPONSIVE */
+/* @media (max-width: 768px) {
+  .main-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-box {
+    width: 100%;
+  }
+
+  .right-wrapper {
+    width: 100%;
+  }
+} */
+
+
+/* GENERAL WRAPPER */
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 120px;
+  min-height: 100vh;
+  background-color: #000000; 
+}
+
+
+.left-wrapper {
+  width: 550px; 
+  /* height हटा दिया ताकि सभी कार्ड्स दिखाई दें */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  /* overflow: hidden हटाया */
+}
+
+/* CARD BOX STYLING */
+.card-box {
+  width: 100%;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  position: relative; /* absolute से relative किया ताकि वे सामान्य प्रवाह में रहें */
+}
+
+/* CARD HEADER (Q4, 2025 - Foundation) */
+.card-quarter-year {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quarter-bubble {
+  font-size: 28px;
+  font-weight: 700;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  background-color: #ffffff; 
+  color: #003768;
+  border: 2px solid #333;
+  margin-right: 40px;
+}
+
+.year-title-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.card-year {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  letter-spacing: 0%;
+}
+
+.card-details {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #aaaaaa;
+  letter-spacing: 4%;
+  font-weight: 400;
+}
+
+
+.active-card {
+  opacity: 1;
+
+  z-index: 10;
+  filter: none;
+  border: 2px solid #000000; 
+  /* background-color: #0e0e0e;  */
+  padding-left: 20px;
+  transform: scale(1.02); 
+}
+
+.active-card .quarter-bubble {
+  background-color: #ffffff;
+  color: #003768;
+  border-color: #ffffff;
+  padding: 20px;
+}
+
+.active-card .card-year, 
+.active-card .card-title{
+background: linear-gradient(90deg, #05b4c8, #003768);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.active-card .card-details {
+    color: #ffffff;
+}
+
+/* OTHER CARDS DULL */
+.dull-card {
+  opacity: 0.3; 
+  filter: blur(1px); 
+  transform: scale(1); 
+  z-index: 1;
+  border: 2px solid #1e1e1e; 
+  /* width: 90%; */
+}
+
+/* 
+.active-card-indicator {
+    position: absolute;
+    right: -80px;
+   
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(to right, #0ed0ff, rgba(14, 208, 255, 0));
+    z-index: 10;
+    transition: transform 0.6s ease;
+} */
+
+
+.right-wrapper {
+  width: 500px; 
+  min-width: 700px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.right-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .main-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .left-wrapper {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .card-box {
+        position: relative;
+        transform: none !important;
+        margin: 15px auto;
+    }
+
+    .dull-card {
+        opacity: 0.5;
+        filter: blur(1px);
+    }
+
+    .right-wrapper {
+        width: 0%;
+        max-width: 0px;
+    }
+
+    .active-card-indicator {
+        display: none;
+    }
+}
+
+
+
+.card-1 {
+  margin-left: 150px;
+}
+
+
+.card-3 {
+  /* Example: Changing the default dull text color */
+ 
+  margin-left: 50px;
+}
+
+
+
+.card-2 {
+ margin-left: 50px;
+}
+
+.card-4 {
+ margin-left: 150px;
+}
+
+/* .card-4 .quarter-bubble {
+  background-color: #ffd700; /* Gold bubble for the second card */
+/* } */ 
+
+
+.right-wrapper {
+  width: 500px;
+  min-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* animation: fadeZoom 1s ease-out forwards; */
+}
+
+.right-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  /* You can enable any animation you like */
+  /* animation: floatImg 4s ease-in-out infinite; */
+  /* animation: slowRotate 10s linear infinite; */
+}
+
+.left-quarter{
+
+}
+
+
+.right-quarter{
+
+}
+
+
+
+/* FADE + SLIGHT ZOOM */
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* FLOATING UP–DOWN EFFECT */
+@keyframes floatImg {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* SLOW SMOOTH ROTATION */
+@keyframes slowRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .main-wrapper {
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px 20px;
+  }
+
+  .left-wrapper {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .right-wrapper {
+    width: 0%;
+    max-width: 0px;
+    display: none;
+  }
+
+  /* Remove zig-zag for clean vertical stacking */
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4 {
+    margin-left: 0 !important;
+  }
+
+  .card-box {
+    margin: 10px 0;
+  }
+}
+
+
+/* -------------------------------
+   MOBILE (≤768px)
+--------------------------------*/
+@media (max-width: 768px) {
+  .main-wrapper {
+    padding: 30px 16px;
+  }
+
+  .left-wrapper {
+    width: 100%;
+  }
+
+  .quarter-bubble {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .card-year { font-size: 20px; }
+  .card-title { font-size: 18px; }
+  .card-details { font-size: 14px; }
+
+  .right-wrapper {
+    max-width: 0px;
+    display: none;
+  }
+}
+
+
+/* -------------------------------
+   SMALL MOBILE (≤480px)
+--------------------------------*/
+@media (max-width: 480px) {
+  .main-wrapper {
+    padding: 20px 10px;
+  }
+
+  .quarter-bubble {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .card-year { font-size: 18px; }
+  .card-title { font-size: 16px; }
+  .card-details { font-size: 13px; line-height: 1.4; }
+
+  .right-wrapper {
+    max-width: 0px;
+    display: none;
+  }
+}
