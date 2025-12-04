@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Heading.css";
-import bgmp4 from "../assets/heading/book.mp4"
+import bgmp4 from "../assets/heading/frame.png"
 import pause from "../assets/heading/Group 11.png"
 import frame from "../assets/heading/frame.png"
 export default function Heading() {

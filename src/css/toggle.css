@@ -1,0 +1,51 @@
+/* Main Switch Box */
+.toggle-switch-box {
+  width: 64px;
+  height: 27px;
+  background: #000000;
+  border-radius: 24px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.1),
+              inset 0 0 20px rgba(0, 0, 0, 0.7),
+              0 0 8px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
+  z-index: 9999;
+  border: 0.5px solid #FFFFFF;
+}
+
+/* Light Mode */
+.toggle-switch-box.light-mode {
+  background: #ffffff;
+  border: 0.5px solid #000000;
+}
+
+/* Knob */
+.toggle-switch-knob {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  background-color: transparent;
+  border: 0.5px solid #FFFFFF;
+}
+
+/* Light Mode Knob Border */
+.toggle-switch-box.light-mode .toggle-switch-knob {
+  border: 0.5px solid #000;
+}
+
+/* Slide Movement */
+.toggle-switch-box.light-mode .toggle-switch-knob {
+  transform: translateX(38px);
+}
+
+.toggle-switch-box.dark-mode .toggle-switch-knob {
+  transform: translateX(0px);
+}

@@ -5,7 +5,7 @@ import '../css/Hero.css';
 // NOTE: Please ensure these paths correctly point to your assets folder
 import AeruxLogo from '../assets/logo/logo.png'; 
 import RobotWithCoin from '../assets/hero/robo.png';
-import bgmp4 from '../assets/hero/bg.mp4'; 
+import bgmp4 from '../assets/hero/robo.png'; 
 import IconX from '../assets/footer/twitter.png'; 
 import IconDiscord from '../assets/footer/game.png';
 import IconInstagram from '../assets/footer/insta.png';
