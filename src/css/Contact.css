@@ -115,7 +115,6 @@
   position: absolute;
   width: 180px;
   height: 40px;
-  border: 2px solid #14accb;
   border-bottom: none;
   border-left: none;
   top: 0;
@@ -128,7 +127,6 @@
   top: auto;
   border-top: none;
   border-right: none;
-  border-left: 2px solid #14accb;
   transform: skewX(-25deg);
 }
 
@@ -247,6 +245,9 @@
     --dark-fill: #000;
     --border-thickness: 2px;
     --inner-glow-color: #003344;
+    --neon-blue: #14accb;
+    --dark-fill: #101010;
+    --border-thickness: 2px; /* Define border thickness */
     
     /* Define the custom shape polygon */
     --clip-path-shape: polygon(
@@ -329,37 +330,28 @@
 /* Example to ensure Orbitron is used for the text */
 .address-box {
     /* ... other styles ... */
-    font-family: "Orbitron", sans-serif; /* Use Orbitron for the main text */
+    font-family: "Orbitron", sans-serif; 
 }
 
 
 
 
 
-/* Define the variables (already present in your code) */
-:root {
-    --neon-blue: #14accb;
-    --dark-fill: #101010;
-    --border-thickness: 2px; /* Define border thickness */
-}
 
 .copy-btn {
     position: relative;
     margin-top: 18px;
-    background: transparent; /* Set main background to transparent or slightly offset color */
-    
-    /* 1. REMOVE the standard 'border' property */
+    background: transparent; 
     border: none; 
     
     padding: 10px 32px;
     margin-left: 100px;
     color: var(--neon-blue);
-    /* 2. REMOVE border-radius, as clip-path ignores it */
     border-radius: 0; 
     cursor: pointer;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Science Gothic", sans-serif;
     transition: 0.2s;
-    z-index: 1; /* Ensure text is on top */
+    z-index: 1; 
 
     --clip-path-shape: polygon(
         10% 0%, 
@@ -369,62 +361,52 @@
         0% 100%, 
         0% 20%
     );
-    /* 3. Apply clip-path ONLY to define the button's visible content area */
     clip-path: var(--clip-path-shape); 
 }
 
-/* --- 4. The Border (::before) --- */
 .copy-btn::before {
     content: '';
     position: absolute;
-    /* Position the pseudo-element to cover the entire button */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1; /* Place the border behind the button text */
+    z-index: -1;
 
-    /* Apply the same custom shape */
     clip-path: var(--clip-path-shape);
-
-    /* The border color (this layer IS the border) */
     background: var(--neon-blue);
-    
-    /* Offset the pseudo-element to create the visible border */
-    /* This makes the pseudo-element slightly bigger than the main button */
-    inset: calc(-1 * var(--border-thickness)); /* Inset by the negative of the thickness */
+    inset: calc(-1 * var(--border-thickness)); 
     
     transition: 0.2s;
 }
 
-/* --- 5. The Inner Fill/Background (::after) --- */
+
 .copy-btn::after {
     content: '';
     position: absolute;
-    /* Position the fill slightly inside the border/::before layer */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: -1; 
     
-    /* Apply the same custom shape */
+
     clip-path: var(--clip-path-shape);
     
-    /* This creates the dark inner background fill */
+   
     background: var(--dark-fill); 
     
-    /* Offset by the border thickness to sit inside the ::before border */
+
     inset: var(--border-thickness);
 }
 
-/* --- 6. Hover Effect --- */
+
 .copy-btn:hover {
-    /* On hover, change the button's text color */
     color: var(--dark-fill); 
 }
 
 .copy-btn:hover::after {
-    /* On hover, change the inner dark fill background to the neon color */
     background: var(--neon-blue);
 }
+
+

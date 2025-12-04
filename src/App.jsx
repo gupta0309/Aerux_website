@@ -13,7 +13,7 @@ import Presale from './components/Presale/Presale'
 import { ThemeProvider } from "./Context/ThemeContext";
 import ThemeToggleButton from "./components/btn/ThemeToggleButton";
 import HeroHeader from './components/HeroHeader'
-
+import ClipButton from './components/btn/ClipButton'
 function App() {
   return (
     <ThemeProvider>

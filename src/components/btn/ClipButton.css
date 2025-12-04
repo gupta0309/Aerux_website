@@ -45,3 +45,8 @@ clip-path: polygon(7% 0, 34% 0, 40% 14%, 70% 15%, 71% 0, 100% 0, 100% 56%, 91% 1
 .clip-btn:hover::after {
   background: linear-gradient(90deg, #373737 0%, #000 100%); /* hover pe swap */
 }
+.clip-btn span{
+  background: linear-gradient(90deg, #05b4c8, #003768);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

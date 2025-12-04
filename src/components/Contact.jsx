@@ -53,6 +53,7 @@ import React, { useState } from "react";
 import "../css/Contact.css";
 import logo from "../assets/logo/address.png";
 
+
 export default function ContractAddress() {
   const address = "0xabcdefabcdefabcdefabcdefabcdefabcd";
   const [copied, setCopied] = useState(false);
@@ -88,8 +89,8 @@ export default function ContractAddress() {
             {address}
           </div>
 
-          <button className="copy-btn" onClick={copyAddress}>
-            {copied ? "Copied!" : "Copy Address"}
+          <button className="clip-btn" onClick={copyAddress}>
+            {copied ? "Copied!" : <>Copy <span> Address</span></>}
           </button>
 
         </div>
