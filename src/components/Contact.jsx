@@ -65,12 +65,11 @@ export default function ContractAddress() {
   };
 
   return (
+    <div className="main">
     <div className="contract-section">
 
       {/* OUTER FUTURISTIC BORDER FRAME */}
       <div className="contract-frame">
-
-        {/* LEFT LOGO */}
         <div className="contract-left">
           <img
             src={logo}
@@ -78,6 +77,8 @@ export default function ContractAddress() {
             alt="logo"
           />
         </div>
+
+        {/* LEFT LOGO */}
 
         {/* RIGHT CONTENT */}
         <div className="contract-right">
@@ -96,6 +97,7 @@ export default function ContractAddress() {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }

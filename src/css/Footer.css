@@ -3,9 +3,22 @@
 /* FOOTER CONTAINER */
 body{
   background-color: black;
-   padding-bottom: 350px;
-   font-family: "Science Gothic",sans-serif;
+  padding-bottom: 350px;
+  font-family: "Science Gothic",sans-serif;
 }
+.footer-wrapper{
+  border-right: 3px solid #00376B;
+  border-radius: 20px;
+   border-left: 3px solid #14accb;
+ border-top: 3px solid #14accb;
+  border-bottom: 3px solid #00376B;
+border: 2px solid transparent;
+border-radius: 10px;
+background: 
+  linear-gradient(#000, #000) padding-box,
+  linear-gradient(124.93deg, #05B4C8 12.67%, #00376B 87.18%) border-box;
+  
+   }
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -280,6 +293,9 @@ font-size: 12px;
   padding-left: 10px;
   margin-left: 50px;
   }
+   .footer-wrapper{
+    border: none;
+  }
   
 }
 
@@ -308,6 +324,9 @@ font-size: 12px;
   height: 150px;
   
   }
+   .footer-wrapper{
+    border: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -332,6 +351,9 @@ font-size: 12px;
   }
    .logo-right {
  display: none;
+  }
+   .footer-wrapper{
+    border: none;
   }
 }
 
@@ -361,6 +383,9 @@ font-size: 12px;
     width: 80%;
     margin-left: 10px;
    }
+    .footer-wrapper{
+    border: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -394,6 +419,9 @@ font-size: 12px;
   }
    .logo-right {
     display: none;
+  }
+   .footer-wrapper{
+    border: none;
   }
 }
 
@@ -435,5 +463,8 @@ font-size: 12px;
   .footer-line {
     width: 80%;
     margin-left: 20px;
+  }
+  .footer-wrapper{
+    border: none;
   }
 }
